@@ -27,8 +27,8 @@ BOT_TOKEN = os.environ["BOT_TOKEN"]                 # من إعدادات Render
 WEBHOOK_URL = os.environ.get("RENDER_EXTERNAL_URL")
 PORT = int(os.environ.get("PORT", "10000"))         # Render يحدّد المنفذ تلقائياً
 
-MAX_WIDTH = 1600        # أقصى عرض مناسب لقوالب ووردبريس
-MAX_HEIGHT = 1600       # أقصى ارتفاع
+MAX_WIDTH = 1200        # أقصى عرض مناسب لقوالب ووردبريس
+MAX_HEIGHT = 1200       # أقصى ارتفاع
 WEBP_QUALITY = 80       # جودة WebP
 # ====================================
 
