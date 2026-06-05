@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: webp-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python webp_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
