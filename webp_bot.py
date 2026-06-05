@@ -7,6 +7,7 @@
 
 import io
 import os
+import asyncio
 import logging
 from PIL import Image
 
@@ -117,6 +118,11 @@ def main():
 
     # التشغيل بـ webhook على Render
     logger.info("تشغيل webhook على %s", WEBHOOK_URL)
+    # ضمان وجود event loop في الخيط الرئيسي (متوافق مع Python 3.12+ و3.14)
+    try:
+        asyncio.get_event_loop()
+    except RuntimeError:
+        asyncio.set_event_loop(asyncio.new_event_loop())
     app.run_webhook(
         listen="0.0.0.0",
         port=PORT,
